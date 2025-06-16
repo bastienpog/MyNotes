@@ -13,6 +13,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import Toast from "react-native-toast-message";
 import uuid from "react-native-uuid";
 import { loadNotes, saveNotes, updateNote } from "../utils/noteStorage";
 
@@ -70,11 +71,15 @@ export default function EditNoteScreen() {
       try {
         const notes = await loadNotes();
         await saveNotes([...notes, newNote]);
-        Alert.alert("Note saved!");
         setTitle("");
         setContent("");
         setPriority("normal");
         router.push("/");
+        Toast.show({
+          type: "success",
+          text1: "Success",
+          text2: "Note saved successfully!",
+        });
       } catch (error) {
         Alert.alert("Error saving note");
         console.error(error);

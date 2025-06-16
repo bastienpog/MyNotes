@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import Toast from "react-native-toast-message";
 import { deleteNote, loadNotes } from "../utils/noteStorage";
 
 export default function NoteScreen() {
@@ -35,6 +36,11 @@ export default function NoteScreen() {
           await deleteNote(id);
           console.log("Note deleted");
           router.push("/");
+          Toast.show({
+            type: "success",
+            text1: "Success",
+            text2: "Note deleted successfully!",
+          });
         },
       },
     ]);

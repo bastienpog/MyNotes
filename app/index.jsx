@@ -9,6 +9,7 @@ import {
   View,
 } from "react-native";
 import Swipeable from "react-native-gesture-handler/Swipeable";
+import Toast from "react-native-toast-message";
 import { NoteCard } from "../components/NoteCard";
 import { SearchBar } from "../components/SearchBar";
 import { deleteNote, loadNotes } from "../utils/noteStorage";
@@ -34,7 +35,11 @@ export default function HomeScreen() {
         onPress: async () => {
           await deleteNote(id);
           setNote((prev) => prev.filter((n) => n.id !== id));
-          console.log("Note deleted");
+          Toast.show({
+            type: "success",
+            text1: "Success",
+            text2: "Note deleted successfully!",
+          });
         },
       },
     ]);

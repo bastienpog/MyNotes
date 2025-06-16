@@ -1,11 +1,13 @@
 import { Stack } from "expo-router";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import Toast from "react-native-toast-message";
 const RootLayout = () => {
   return (
     <GestureHandlerRootView>
       <Stack screenOptions={stackOptions}>
         <Stack.Screen name="index" options={notesScreenOptions} />
       </Stack>
+      <Toast />
     </GestureHandlerRootView>
   );
 };
