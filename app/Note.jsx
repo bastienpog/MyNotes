@@ -64,6 +64,11 @@ export default function NoteScreen() {
           {note.priority === "high" && "🔴 High"}
         </Text>
       </View>
+      {note.date && (
+        <Text style={{ color: "#888", marginBottom: 8 }}>
+          {new Date(note.date).toLocaleString()}
+        </Text>
+      )}
       <TextInput
         style={styles.textArea}
         value={note.content}

@@ -52,6 +52,7 @@ export default function EditNoteScreen() {
         title: title.trim(),
         priority,
         content: content.trim(),
+        date: new Date().toISOString(),
       };
       try {
         await updateNote(updatedNote);
@@ -67,6 +68,7 @@ export default function EditNoteScreen() {
         title: title.trim(),
         priority,
         content: content.trim(),
+        date: new Date().toISOString(),
       };
       try {
         const notes = await loadNotes();

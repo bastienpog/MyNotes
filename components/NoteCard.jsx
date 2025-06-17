@@ -24,6 +24,11 @@ export function NoteCard({ note, cardSize }) {
       <ThemedText type="default" style={styles.notePriority}>
         {getPriorityLabel(note.priority)}
       </ThemedText>
+      {note.date && (
+        <ThemedText type="default" style={styles.noteDate}>
+          {new Date(note.date).toLocaleDateString()}
+        </ThemedText>
+      )}
     </View>
   );
 }
@@ -48,5 +53,11 @@ const styles = StyleSheet.create({
   notePriority: {
     fontSize: 12,
     color: "#555",
+  },
+  noteDate: {
+    fontSize: 11,
+    color: "#888",
+    marginTop: 4,
+    textAlign: "center",
   },
 });
