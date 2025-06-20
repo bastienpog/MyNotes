@@ -1,50 +1,94 @@
-# Welcome to your Expo app 👋
+# 📝 myNotes
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Mobile Notes App for Azienda**  
+Projet développé dans le cadre de la formation à L'École Multimédia  
+Développeur : Bastien Pognon
+Classe : CDA2 A
 
-## Get started
+---
 
-1. Install dependencies
+## 📌 Description
 
-   ```bash
-   npm install
-   ```
+**myNotes** est une application mobile de prise de notes interne à l’entreprise **Azienda**.  
+Elle permet aux collaborateurs de :
 
-2. Start the app
+- créer, modifier, supprimer et consulter des notes,
+- leur attribuer une priorité (Important / Normal / Pense-bête),
+- stocker les données **localement** (pas de cloud),
+- conserver les données même après fermeture de l'appareil.
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🚀 Fonctionnalités
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- ✅ Affichage de toutes les notes (dashboard)
+- ✅ Création d’une nouvelle note
+- ✅ Édition et suppression d’une note
+- ✅ Stockage local via `AsyncStorage`
+- ✅ Gestion de la priorité via code couleur
+- ✅ Interface responsive (téléphone & tablette)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🧱 Architecture
 
-When you're ready, run:
+- **app/** : Pages de l’application (dashboard, note, formulaire)
+- **components/ui/** : Composants réutilisables (NoteCard, SearchBar, etc.)
+- **utils/** : Fonctions utilitaires (`noteStorage.js`)
+- **assets/** : Images, polices, etc.
+- **hooks/**, **constants/**, **scripts/** : Organisation évolutive
+
+Architecture logicielle en 3 couches :
+
+- Présentation → `app/`, `components/`
+- Métier → `utils/noteStorage.js`
+- Données → `AsyncStorage`
+- Sécurité intégrée (voir section dédiée)
+
+---
+
+## 🔒 Stratégie de sécurité
+
+- Aucune donnée sensible n’est stockée
+- Stockage local uniquement (pas d’API, pas de cloud)
+- Suppression confirmée via modale
+- Respect des bonnes pratiques RGPD
+
+---
+
+## 🌱 Éco-conception
+
+- Stockage local pour réduire le trafic réseau
+- UI minimaliste pour économiser l’énergie
+- Code modulaire et réutilisable
+
+---
+
+## 🛠️ Technologies utilisées
+
+| Outil / Tech        | Rôle                 |
+| ------------------- | -------------------- |
+| React Native (Expo) | Développement mobile |
+| AsyncStorage        | Stockage local       |
+| VS Code             | IDE principal        |
+| Git & GitHub        | Versionnage          |
+
+---
+
+## 🧪 Installation
+
+### 🔧 Prérequis
+
+- Node.js
+- npm
+- Expo CLI (`npm install -g expo-cli`)
+- Application Expo Go (pour tester sur mobile)
+
+### 📦 Clonage du projet
 
 ```bash
-npm run reset-project
+git clone https://github.com/bastienpog/myNotes.git
+cd myNotes
+npm install
+npm run start
 ```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
