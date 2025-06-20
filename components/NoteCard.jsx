@@ -35,7 +35,7 @@ export function NoteCard({ note, cardSize }) {
 
 const styles = StyleSheet.create({
   noteCard: {
-    backgroundColor: "#eee",
+    backgroundColor: "#7EE4EC",
     borderRadius: 8,
     justifyContent: "center",
     alignItems: "center",

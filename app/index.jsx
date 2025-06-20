@@ -132,29 +132,6 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
     marginHorizontal: -spacing / 2,
   },
-
-  noteCard: {
-    width: cardSize,
-    height: cardSize,
-    backgroundColor: "#eee",
-    borderRadius: 8,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    marginHorizontal: spacing / 2,
-    marginBottom: spacing,
-  },
-  noteTitle: {
-    fontWeight: "bold",
-    fontSize: 14,
-    textAlign: "center",
-    marginBottom: 4,
-    color: "#555",
-  },
-  notePriority: {
-    fontSize: 12,
-    color: "#555",
-  },
   fab: {
     position: "absolute",
     right: 24,
